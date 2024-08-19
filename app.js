@@ -14,9 +14,14 @@ app.set('view engine', 'ejs');
 app.set('views' , './views');
 
 
-
 //Middelewares
 app.use(express.static('public'));
+
+app.use((err, res , req, next) => {
+    console.error(err.stack);
+    res.status(500).send('Internal Server Error');
+    next();
+});
 
 //start server
 app.listen(PORT, () => {
