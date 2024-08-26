@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const bodyParser = require('body-parser');
 require('dotenv').config();
 const authRoutes = require('./routes/authRoutes.js');
 const studentRoutes = require('./routes/studentRoutes.js');
@@ -17,8 +18,11 @@ app.set('views', './views');
 
 //Middlewares
 app.use(express.static('public'));
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', authRoutes);
 app.use('/', studentRoutes);
+
 
 app.use((err, res, req, next) =>{
     console.error(err.stack);

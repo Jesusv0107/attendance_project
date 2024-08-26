@@ -20,7 +20,20 @@ body {
     flex-direction: column; /* Align children vertically */
     justify-content: center; /* Center children vertically */
 }
-
+#login{
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background: blue;
+    border-radius:25px;
+    width:100%;
+    color:#fff;
+    padding:5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom:10px;
+}
 h3 {
     text-align: center;
     margin-bottom: 10px;

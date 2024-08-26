@@ -19,7 +19,8 @@ const attendanceManagerSchema = new mongoose.Schema({
         enum: ['attendance-manager', 'Admin'],
 
     },
-    timestamps: true,
+    
+    //timestamps: true,
 
 
 });
