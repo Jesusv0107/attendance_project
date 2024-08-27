@@ -8,7 +8,9 @@ const router = express.Router();
 router.get('/login', (req, res) =>{ res.render('login');});
 router.get('/register', (req, res) =>{ res.render('register');});
 
+
 //controller actions
+router.post('/login', authController.login);
 router.post('/register', authController.register);
 
 
