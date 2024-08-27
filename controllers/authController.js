@@ -28,7 +28,9 @@ exports.login = async (req, res) => {
         const token = jwt.sign({id: user_id.toString()}, 'secret_key',{expiresIn: '5m'});
 
         //Create a cookie and place JWT/token inside it
-        res.cookie('jwt', token, { maxAge: 5 * 60 * 1000, http: true} );
+        res.cookie('jwt', token, { maxAge: 5 * 60 * 1000, http: true});
+
+        res.redirect('/home');
 
 
 
