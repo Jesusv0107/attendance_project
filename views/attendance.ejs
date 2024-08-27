@@ -22,7 +22,7 @@
     <form id="logout" action="/logout" method="POST" class="logout-form">
         <button type="submit">Logout</button>
     </form>
-    <a href="/api/docs" class="api-docs-link">API Documentation</a>
+    <a href="/api/docs" class="api-docs-link">Attendance Project</a>
 </header>
 
 <section>
@@ -118,6 +118,7 @@
         };
 
         // Initialize Chart.js bar chart
+  /*      
         const ctx = document.getElementById('attendanceChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
@@ -153,7 +154,7 @@
                 }
             }
         });
-
+*/
         // "Check All" button event listener
         document.getElementById('checkAllButton').addEventListener('click', () => {
             const checkboxes = document.querySelectorAll('#table tbody input[type="checkbox"]');
