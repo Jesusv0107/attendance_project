@@ -26,7 +26,7 @@
 </header>
 
 <section>
-    <canvas id="attendanceChart"></canvas>
+    <div id="canvasContainer"><canvas id="attendanceChart"></canvas></div>
 
     <form id="attendForm" action="/updatestudent" method="POST">
         <table id="table">
@@ -118,7 +118,7 @@
         };
 
         // Initialize Chart.js bar chart
-  /*      
+       
         const ctx = document.getElementById('attendanceChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
@@ -154,7 +154,7 @@
                 }
             }
         });
-*/
+
         // "Check All" button event listener
         document.getElementById('checkAllButton').addEventListener('click', () => {
             const checkboxes = document.querySelectorAll('#table tbody input[type="checkbox"]');

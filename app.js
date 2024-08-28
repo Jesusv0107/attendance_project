@@ -1,11 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const YAML = require('yamljs');
+const swaggerUI = require('swagger-ui-express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const authRoutes = require('./routes/authRoutes.js');
 const studentRoutes = require('./routes/studentRoutes.js');
 const PORT = process.env.PORT || 3000;
+
+
+//Swagger Documentation
+const   swaggerDocument =YAML.load('./swagger.yaml');
+app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+
 
 //Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
