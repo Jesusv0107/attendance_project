@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const YAML = require('yamljs');
+const initializeDatabase = require('./data/initializeDatabase');
 const swaggerUI = require('swagger-ui-express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -17,7 +18,10 @@ app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 //Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
-.then(() => { console.log(`Connected to MongoDB Database`) })
+.then(async() => { 
+    console.log(`Connected to MongoDB Database`);
+    await initializeDatabase();
+ })
 .catch((err) => { console.log(`Error connecting to database: ${err}`) });
 
 //View Engines
